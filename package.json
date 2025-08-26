@@ -1,0 +1,32 @@
+{
+  "name": "razorpay-style-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "apexcharts": "^3.46.0",
+    "autoprefixer": "10.4.20",
+    "clsx": "2.1.1",
+    "lucide-react": "0.469.0",
+    "next": "^15.5.0",
+    "postcss": "8.4.41",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "^2.13.0",
+    "tailwind-merge": "2.5.2",
+    "tailwindcss": "3.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
+    "eslint": "9.9.0",
+    "eslint-config-next": "15.0.3",
+    "typescript": "5.5.4"
+  }
+}

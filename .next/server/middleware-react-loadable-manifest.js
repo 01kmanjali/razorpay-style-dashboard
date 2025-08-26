@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST='{"app/page.tsx -> @/components/AreaRevenueChart":{"id":7801,"files":["static/chunks/3975359d.5d06e44fc65cc592.js","static/chunks/801.b0678e0818f527fa.js"]},"app/page.tsx -> @/components/BarWeekly":{"id":5820,"files":["static/chunks/3975359d.5d06e44fc65cc592.js","static/chunks/820.64c2ce3066800005.js"]}}';
