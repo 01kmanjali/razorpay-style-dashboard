@@ -44,9 +44,9 @@ export default function Page() {
   const [activeUser, setActiveUser] = useState(yourRank[1]);
 
   return (
-    <main className="flex-1">
-      <Topbar />
-      <div className="px-6 py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <main className="flex-1">
+        <Topbar />
+        <div className="px-6 py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className=" lg:col-span-full card p-6 card h-[48px] px-6 py-6 gap-6  rounded-xl flex items-center">
           <span className="text-xl font-bold">6 Days 11 Hr 59 Min 09 Sec</span>
           <span className="text-sm text-muted">
@@ -54,51 +54,51 @@ export default function Page() {
             <span className="text-accent-2">click away...</span>
           </span>
         </div>
-        {/* Earnings Insights */}
-        <section className="lg:col-span-2 card p-6">
-          <div className="text-lg font-semibold mb-1">Earnings Insights</div>
-          <div className="text-xs text-muted mb-4">Performance Summary</div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {EarningsInsights.map((stat) => (
-              <StatCard
-                key={stat.title}
-                icon={stat.icon}
-                title={stat.title}
-                amount={stat.amount}
-                note={stat.note}
-                color={stat.color}
+          {/* Earnings Insights */}
+          <section className="lg:col-span-2 card p-6">
+            <div className="text-lg font-semibold mb-1">Earnings Insights</div>
+            <div className="text-xs text-muted mb-4">Performance Summary</div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              {EarningsInsights.map((stat) => (
+                <StatCard
+                  key={stat.title}
+                  icon={stat.icon}
+                  title={stat.title}
+                  amount={stat.amount}
+                  note={stat.note}
+                  color={stat.color}
+                />
+              ))}
+            </div>
+          </section>
+
+          {/* Earning Level */}
+          <section className="card p-6">
+            <div className="flex justify-between items-start mb-2">
+              <div className="text-lg font-semibold">Earning Level</div>
+              <Dropdown
+                options={timeData}
+                onSelect={(data) => console.log("selected", data)}
+                hasPlaceholder={true}
               />
-            ))}
-          </div>
-        </section>
+            </div>
+            <BarWeekly />
+          </section>
 
-        {/* Earning Level */}
-        <section className="card p-6">
-          <div className="flex justify-between items-start mb-2">
-            <div className="text-lg font-semibold">Earning Level</div>
-            <Dropdown
-              options={timeData}
-              onSelect={(data) => console.log("selected", data)}
-              hasPlaceholder={true}
-            />
-          </div>
-          <BarWeekly />
-        </section>
-
-        {/* Your Rank */}
-        <section className="card p-6">
-          <div className="text-lg font-semibold mb-1">Your Rank</div>
-          <div className="text-xs text-muted mb-1">Among other affiliates</div>
+          {/* Your Rank */}
+          <section className="card p-6">
+            <div className="text-lg font-semibold mb-1">Your Rank</div>
+            <div className="text-xs text-muted mb-1">Among other affiliates</div>
           <div className="text-2xl font-semibold mb-4 text-accent-2">
             {activeUser && activeUser.rank}
           </div>
-          <div className="space-y-4">
+            <div className="space-y-4">
             {yourRank.map((p) => (
               <div key={p.name} className="flex items-center justify-between cursor-pointer"
                 onClick={() => setActiveUser(p)}
               >
-                <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-full bg-white/15 overflow-hidden">
+                  <div className="flex items-center gap-3">
+                    <div className="h-9 w-9 rounded-full bg-white/15 overflow-hidden">
                     <Image src={p.Image} alt={p.name} width={36} height={36} className=" h-full object-cover" />
                   </div>
                   <div className="text-sm">{p.name}</div>
@@ -112,23 +112,23 @@ export default function Page() {
                 >
                   {p.rank}
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Total Earning */}
-        <section className="lg:col-span-2 card p-6">
-          <div className="flex items-center justify-between mb-2">
-            <div className="text-lg font-semibold">Total Earning</div>
-            <div className="badge w-max flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-accent-3" />
-              <span>Revenue</span>
+                </div>
+              ))}
             </div>
-          </div>
-          <AreaRevenueChart />
-        </section>
-      </div>
-    </main>
+          </section>
+
+          {/* Total Earning */}
+          <section className="lg:col-span-2 card p-6">
+          <div className="flex items-center justify-between mb-2">
+              <div className="text-lg font-semibold">Total Earning</div>
+              <div className="badge w-max flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-accent-3" />
+                <span>Revenue</span>
+              </div>
+            </div>
+            <AreaRevenueChart />
+          </section>
+        </div>
+      </main>
   );
 }
